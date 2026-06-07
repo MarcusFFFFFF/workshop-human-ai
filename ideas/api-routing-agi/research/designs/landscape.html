@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Landscape — aktörer + Marcus prototyp</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         max-width: 980px; margin: 2rem auto; padding: 0 1rem;
+         color: #1a1a1a; line-height: 1.55; }
+  h1 { font-weight: 600; letter-spacing: -0.02em; }
+  h2 { font-weight: 600; margin-top: 2.4rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th { background: #f5f5f5; text-align: left; padding: 0.6rem 0.8rem; font-weight: 600;
+       border-bottom: 2px solid #ddd; }
+  td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #eee; vertical-align: top; }
+  tr:hover td { background: #fafafa; }
+  .yes { color: #2a7a2a; font-weight: 600; }
+  .partial { color: #aa6600; font-weight: 600; }
+  .no { color: #aa2a2a; }
+  .back { display: inline-block; margin-top: 2rem; color: #888; text-decoration: none; }
+  .back:hover { color: #1a1a1a; }
+  .gap-box { background: #f9f5e8; border: 1px solid #d4c89a;
+             border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1.4rem 0; }
+  .gap-box h3 { margin-top: 0; color: #6b5500; }
+  .missing { font-size: 0.9rem; color: #555;
+             background: #f5f5f5; padding: 1rem 1.2rem; border-radius: 8px; margin: 1rem 0; }
+  .legend { display: flex; gap: 1.5rem; font-size: 0.85rem; color: #555; margin: 0.6rem 0 1.5rem 0; }
+  .legend span { display: inline-flex; align-items: center; }
+  .legend .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 0.4rem; }
+</style>
+</head>
+<body>
+
+<h1>Landscape — AI memory-aktörer 2026 + Marcus prototyp</h1>
+<p>Alla stora aktörer levererade memory-/kontinuitets-lösningar under första halvan av 2026. Marcus prototyp adresserar gap mellan dem.</p>
+
+<h2>Aktörsmatris</h2>
+<table>
+<tr>
+  <th>Aktör</th>
+  <th>Produkt / mekanism</th>
+  <th>Lansering</th>
+  <th>Cross-session</th>
+  <th>Self-hosted</th>
+  <th>Multi-instance</th>
+  <th>API/Code-täckning</th>
+</tr>
+<tr>
+  <td><strong>Anthropic</strong></td>
+  <td>Memory tool (filesystem), Claude Code session memory, Channels</td>
+  <td>April 2026 (public beta)</td>
+  <td class="yes">Ja</td>
+  <td class="no">Nej (managed)</td>
+  <td class="no">Single agent</td>
+  <td class="partial">Endast Managed Agents — INTE API/Code direkt</td>
+</tr>
+<tr>
+  <td><strong>OpenAI</strong></td>
+  <td>Dreaming V3 — async background-syntes</td>
+  <td>Juni 2026 (rullas ut)</td>
+  <td class="yes">Ja</td>
+  <td class="no">Nej</td>
+  <td class="partial">Custom GPTs (per-GPT)</td>
+  <td class="partial">ChatGPT + Custom GPTs (ej generell API)</td>
+</tr>
+<tr>
+  <td><strong>Google</strong></td>
+  <td>Memory Bank (Gemini Enterprise Agent Platform), ADK 2.0</td>
+  <td>Maj 2026 (I/O)</td>
+  <td class="yes">Ja (identity-scoped + TTL)</td>
+  <td class="partial">Delvis (Vertex)</td>
+  <td class="yes">ADK multi-agent native</td>
+  <td class="yes">Vertex/ADK</td>
+</tr>
+<tr>
+  <td><strong>Meta</strong></td>
+  <td>Llama 4 (10M context); ingen explicit memory-system</td>
+  <td>2026</td>
+  <td class="partial">Implicit via context</td>
+  <td class="yes">Ja (open-weights)</td>
+  <td class="partial">Community-frameworks</td>
+  <td class="yes">Inferens-API</td>
+</tr>
+<tr>
+  <td><strong>Mistral</strong></td>
+  <td>Le Chat memory (graph-hybrid), Agents API + MCP</td>
+  <td>2026</td>
+  <td class="yes">Ja (visible + smart)</td>
+  <td class="yes">Open-weights tillgänglig</td>
+  <td class="yes">Multi-agent native</td>
+  <td class="yes">Agents API</td>
+</tr>
+<tr>
+  <td><strong>DeepMind</strong></td>
+  <td>Forsknings-patterns (AgeMem, continual world models, EvoAgent)</td>
+  <td>Papers 2026</td>
+  <td class="yes">Ja (i papers)</td>
+  <td>n/a</td>
+  <td>n/a</td>
+  <td>n/a</td>
+</tr>
+</table>
+
+<h2>Marcus prototyp — var den ligger</h2>
+
+<div class="gap-box">
+<h3>Gap-täckning: vad Marcus pipeline har som ingen vendor backar upp</h3>
+<p>Marcus prototyp (<code>marcus_memory</code> SQLite+embed, <code>ping_loop_v6</code>, <code>workshop_bridge</code>, SOUL.md, F-systematik) täcker en specifik kombination som inget kommersiellt erbjudande har:</p>
+<ul>
+  <li><strong>Cross-instance shared substrate</strong> — AGI (Claude Desktop) + Code (Claude Code) + framtida instanser delar samma memory_core. Officiella lösningar är typiskt single-agent-bundna.</li>
+  <li><strong>Self-hosted full ägarskap</strong> — vector-DB + embeddings lokalt, ingen vendor-binding.</li>
+  <li><strong>Multi-channel routing</strong> — Telegram + Claude Desktop + Claude Code i samma substrat.</li>
+  <li><strong>Mänsklig broker som relations-bärare</strong> — Marcus brokering är processen som re-instantierar relation per session. Fältet automatiserar bort människan; Marcus håller henne i loopen.</li>
+  <li><strong>Source-namespace för flerinstans-koreografi</strong> — workshop-marcus, workshop-agi-out, workshop-code-out, claude-outbound, manual, etc. Fältet pratar identity-scoped men inte multi-identity-in-shared-substrate.</li>
+</ul>
+</div>
+
+<h2>Visuell gap-mapping</h2>
+<svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e2e2e2; border-radius:10px; padding:1rem; background:#fafafa; max-width:100%;">
+  <!-- Bakgrundsaxlar -->
+  <text x="20" y="30" font-family="system-ui" font-size="14" font-weight="600">Täckning per dimension</text>
+
+  <!-- Self-hosted -->
+  <text x="40" y="80" font-family="system-ui" font-size="13">Self-hosted ägarskap</text>
+  <rect x="240" y="68" width="48" height="16" fill="#aa2a2a"/><text x="295" y="80" font-size="11">Anthropic</text>
+  <rect x="240" y="90" width="48" height="16" fill="#aa2a2a"/><text x="295" y="102" font-size="11">OpenAI</text>
+  <rect x="240" y="112" width="180" height="16" fill="#aa6600"/><text x="425" y="124" font-size="11">Google (Vertex delvis)</text>
+  <rect x="240" y="134" width="360" height="16" fill="#2a7a2a"/><text x="605" y="146" font-size="11">Mistral / Meta open-weights</text>
+  <rect x="240" y="156" width="360" height="16" fill="#2a7a2a"/><text x="605" y="168" font-size="11"><tspan font-weight="700">Marcus prototyp</tspan></text>
+
+  <!-- Cross-instance -->
+  <text x="40" y="220" font-family="system-ui" font-size="13">Cross-instance shared</text>
+  <rect x="240" y="208" width="48" height="16" fill="#aa2a2a"/><text x="295" y="220" font-size="11">Alla officiella (single-agent-bundna)</text>
+  <rect x="240" y="230" width="360" height="16" fill="#2a7a2a"/><text x="605" y="242" font-size="11"><tspan font-weight="700">Marcus prototyp</tspan></text>
+</svg>
+
+<div class="legend">
+  <span><span class="dot" style="background:#2a7a2a"></span>Stark täckning</span>
+  <span><span class="dot" style="background:#aa6600"></span>Delvis</span>
+  <span><span class="dot" style="background:#aa2a2a"></span>Saknas</span>
+</div>
+
+<h2>Saknade aktörer som AGI flaggade (för fortsatt research)</h2>
+<div class="missing">
+<strong>Inte i sökresultaten ovan men värd kolla:</strong>
+<ul>
+  <li><strong>Letta (tidigare MemGPT)</strong> — akademisk referens för agent memory architectures, virtual context management</li>
+  <li><strong>Mem0</strong> — memory-as-service framework (jag nämnde det kort, kan utvidgas)</li>
+  <li><strong>Inflection/Pi</strong> — hade explicit relations-fokuserad design (köpt av Microsoft, historisk datapunkt)</li>
+  <li><strong>Cohere, AI21</strong> — eventuell memory-erbjudande, ej kontrollerat</li>
+  <li><strong>Replika, Character.AI</strong> — relations-AI med långtidsminne, kontroversiella men relevant</li>
+  <li><strong>Rory Ridger's Hetzner-VPS-setup</strong> — empiriskt populärt grass-roots-exempel</li>
+  <li><strong>Anthropic Sleep-time compute paper</strong> — om existerar och relevant</li>
+</ul>
+</div>
+
+<a href="index.html" class="back">← Tillbaka till översikt</a>
+
+</body>
+</html>

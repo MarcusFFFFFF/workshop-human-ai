@@ -1,0 +1,25 @@
+# Sensitive — bot tokens, chat IDs, secrets
+.claude/settings.local.json
+.claude/settings.json
+
+# Operativ state — sessions-specifik
+.code_wake
+.workshop_telegram_offset
+.workshop_sent_outbound_ids
+
+# Bridge-logg innehåller raw memory I/O — kan ha känsligt content
+sessions/workshop_bridge.log
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Editor
+.idea/
+.vscode/

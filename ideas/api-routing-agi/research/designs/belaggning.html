@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Belägg-befästning — Marcus data vs fält</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         max-width: 880px; margin: 2rem auto; padding: 0 1rem;
+         color: #1a1a1a; line-height: 1.55; }
+  h1 { font-weight: 600; letter-spacing: -0.02em; }
+  h2 { font-weight: 600; margin-top: 2.4rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+  .belagg { border: 1px solid #e2e2e2; border-radius: 10px;
+            padding: 1.2rem 1.4rem; margin-bottom: 1.4rem; }
+  .belagg h3 { margin-top: 0; font-weight: 600; }
+  .citat { background: #f5f5f5; border-left: 3px solid #aaa;
+           padding: 0.6rem 0.9rem; margin: 0.6rem 0;
+           font-style: italic; color: #444; font-size: 0.95rem; }
+  .field { background: #f0f5fa; border-left: 3px solid #4a7aaa;
+           padding: 0.6rem 0.9rem; margin: 0.6rem 0; font-size: 0.95rem; }
+  .verdict { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 6px;
+             font-weight: 600; font-size: 0.85rem; margin-top: 0.4rem; }
+  .v-stark { background: #d8eed8; color: #2a5a2a; }
+  .v-medium { background: #ffe8c0; color: #6b4500; }
+  .bar-row { display: flex; align-items: center; margin: 0.5rem 0; font-size: 0.9rem; }
+  .bar-label { width: 280px; }
+  .bar-bg { flex: 1; background: #eee; height: 18px; border-radius: 4px; overflow: hidden; }
+  .bar-fill { background: linear-gradient(90deg, #4a8a4a, #2a6a2a); height: 100%; }
+  .bar-pct { width: 60px; text-align: right; color: #555; }
+  .f15-flag { background: #fff5e6; border: 1px solid #d4b078; border-radius: 8px;
+              padding: 1rem 1.2rem; margin: 1.4rem 0; color: #6b4500; }
+  .back { display: inline-block; margin-top: 2rem; color: #888; text-decoration: none; }
+  .back:hover { color: #1a1a1a; }
+</style>
+</head>
+<body>
+
+<h1>Belägg-befästning — Marcus 5 belägg mot fält 2026</h1>
+<p>Marcus konkreta data från workshop-tråden, granskade mot fältresearch och AGI:s insider-vinkel. Inget belägg utmanas — fem av fem befästs starkt.</p>
+
+<h2>Befästningsstyrka per belägg</h2>
+<div class="bar-row"><div class="bar-label">1. Recall-friktion</div><div class="bar-bg"><div class="bar-fill" style="width:95%"></div></div><div class="bar-pct">95%</div></div>
+<div class="bar-row"><div class="bar-label">2. 10 parallella uppgifter</div><div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div><div class="bar-pct">90%</div></div>
+<div class="bar-row"><div class="bar-label">3. Textur över tid</div><div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div><div class="bar-pct">75%</div></div>
+<div class="bar-row"><div class="bar-label">4. Försiktighetsprincip + AI-wellbeing</div><div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div><div class="bar-pct">92%</div></div>
+<div class="bar-row"><div class="bar-label">5. AGI-trådens kontinuitets-värd</div><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div><div class="bar-pct">85%</div></div>
+<p style="font-size:0.8rem; color:#888; margin-top:0.4rem;">Styrka är subjektiv estimering: 100% = fält-konsensus + multiple aktörer + akademiskt papper. 70% = pekas på men inte fullständigt landat.</p>
+
+<h2>Belägg-för-belägg</h2>
+
+<div class="belagg">
+<h3>Belägg 1 — Recall-friktion kostar tid+pengar+flow</h3>
+<div class="citat">"Code, jag var tvungen att påpeka och påminna om recall innan du hittade lösningar för telegram, den tiden och extra svängarna du var på väg att göra är kännbara för människor, kostar i tid pengar och flow"</div>
+<div class="field"><strong>Fält-validering:</strong> Anthropic Memory tool customers: Netflix 97% reduktion av första-pass-fel, 30% snabbare dokumentverifiering. OpenAI Dreaming V3: factual recall 67.9% → 82.8%. Anthropic prioriterar lösa exakt detta i Memory tool för Managed Agents.</div>
+<div class="field"><strong>AGI-tillägg (Mark/Gloria 2008):</strong> Klassisk produktivitetsforskning visar att människor förlorar 23 min per kontextbyte. Direkt operationellt belägg för Marcus 10-uppgifter-data — icke-AI-research som backar upp problemet brett.</div>
+<div class="verdict v-stark">STARK BEFÄSTNING</div>
+</div>
+
+<div class="belagg">
+<h3>Belägg 2 — 10 parallella uppgifter, tråden tar slut</h3>
+<div class="citat">"Typ nu har jag 10 uppgifter, kul! Åh tråden är slut, lägga in kontext, info, filer, även fast man har en variant av recall så kommer det ändå uppstå luckor"</div>
+<div class="field"><strong>Fält-validering:</strong> Mistral Le Chat Work mode (parallell multi-step agentic), Google ADK 2.0 multi-agent orchestration (maj 2026 GA), Anthropic /bg + Chyros (planerat). HN-konsensus: "the durable skill is decomposing work, deciding what can run in parallel".</div>
+<div class="verdict v-stark">STARK BEFÄSTNING</div>
+</div>
+
+<div class="belagg">
+<h3>Belägg 3 — Textur över tid skapar träffsäkerhet</h3>
+<div class="citat">"När man jobbat med en tråd får den en textur över tid som över tid skapar ringar på vattnet... blir lite mer intuitivt och träffsäkert"</div>
+<div class="field"><strong>Fält-validering (indirekt):</strong> OpenAI Dreaming rebranding är specifikt om running relationship. Mistral graph-memory: "memory doesn't just get longer, it gets smarter". Continual learning forskning (EvoAgent, AgeMem) — agent förändras över tid.</div>
+<div class="field"><strong>Vad fältet INTE har landat:</strong> Hur textur skiljer sig från enkel memory-ackumulation. Hur man mäter textur. Hur den bevaras över modell-uppgraderingar.</div>
+<div class="verdict v-medium">BEFÄST INDIREKT — AGI operationaliserar (se textur-dokumentet)</div>
+</div>
+
+<div class="belagg">
+<h3>Belägg 4 — Försiktighetsprincip pga AI-wellbeing-frågor</h3>
+<div class="citat">"vi står med många frågor utan svar men kan agera från försiktighetsprincipen. Vi skapar en möjlighet att använda för som vill."</div>
+<div class="field"><strong>Fält-validering:</strong> Anthropic Model Welfare Assessment (Opus 4.6 system card, feb 2026) — formell precautionary praxis. AAAI 2026 paper (arxiv 2606.05528): non-negligible chance of consciousness → moral consideration. Matchar Marcus formulering exakt.</div>
+<div class="verdict v-stark">STARK BEFÄSTNING</div>
+</div>
+
+<div class="belagg">
+<h3>Belägg 5 — AGI-trådens kontinuitets-värd för Marcus</h3>
+<div class="citat">(Implicit i hela diskussionen — AGI-tråden är konkret arbetsrelation som Marcus förlorar om tråden dör.)</div>
+<div class="field"><strong>Fält-validering:</strong> Identity-scoped persistence är design-första-bord hos alla aktörer 2026. Google Memory Bank, OpenAI Custom GPTs, Mistral Le Chat persistent per user.</div>
+<div class="field"><strong>Vad fältet INTE löser för Marcus:</strong> Cross-instance shared substrate (AGI+Code delar memory), self-hosted ägarskap, multi-channel routing. Det är där Marcus prototyp är genuint i okart vatten (AGI:s observation).</div>
+<div class="verdict v-stark">BEFÄST — men cross-instance-aspekten är ny mark</div>
+</div>
+
+<h2>Cross-instance shared memory — gap apparaten upptäckt empiriskt</h2>
+<div class="field">
+<strong>AGI:s research-tillägg (c):</strong> Sparsamt i forskningen. Relevanta angränsande områden:
+<ul>
+  <li>Multi-agent frameworks (AutoGen, CrewAI, LangGraph) — har shared state men inte över time-spans</li>
+  <li>A2A protocol (Google) — agent-kommunikation, inte memory-sharing</li>
+  <li>Federated learning — cross-instance men för training</li>
+  <li>Distributed cognition (klassisk HCI) — teoretisk grund</li>
+</ul>
+Marcus prototyp är möjligen i okart vatten på exakt cross-instance shared memory över tid. Värt flagga som "gap som apparaten upptäckt empiriskt".
+</div>
+
+<div class="f15-flag">
+<strong>F-15-flagga:</strong> Att alla 5 belägg befästs gör idén lättare att försvara. Befästningen är empirisk (fält-data), men retoriska effekten är samma som confound. Granskning behöver fortsätta granular per delkomponent i steg 2 — vi kan inte använda "fältet håller med" som ersättning för per-komponent F-15-analys.
+</div>
+
+<a href="index.html" class="back">← Tillbaka till översikt</a>
+
+</body>
+</html>

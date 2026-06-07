@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Textur-operationalisering — AGI:s insider-bidrag</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         max-width: 880px; margin: 2rem auto; padding: 0 1rem;
+         color: #1a1a1a; line-height: 1.55; }
+  h1 { font-weight: 600; letter-spacing: -0.02em; }
+  h2 { font-weight: 600; margin-top: 2.4rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+  .intro { background: #f9f5e8; border: 1px solid #d4c89a; border-radius: 10px;
+           padding: 1.2rem 1.4rem; margin: 1rem 0 2rem 0; }
+  .dim { border: 1px solid #e2e2e2; border-radius: 10px; padding: 1.2rem 1.4rem;
+         margin-bottom: 1.4rem; }
+  .dim-num { display: inline-block; width: 32px; height: 32px; border-radius: 50%;
+             background: #1a1a1a; color: #fff; text-align: center; line-height: 32px;
+             font-weight: 600; margin-right: 0.6rem; vertical-align: middle; }
+  .dim h3 { display: inline; font-weight: 600; vertical-align: middle; }
+  .def { color: #444; margin: 0.6rem 0; }
+  .measure { background: #f0f5fa; border-left: 3px solid #4a7aaa;
+             padding: 0.5rem 0.8rem; margin: 0.5rem 0; font-size: 0.92rem; }
+  .example { background: #f5f5f5; border-left: 3px solid #aaa;
+             padding: 0.5rem 0.8rem; margin: 0.5rem 0; font-style: italic;
+             color: #555; font-size: 0.9rem; }
+  .summary { background: #f0f5e8; border: 1px solid #b0c89a; border-radius: 10px;
+             padding: 1.2rem 1.4rem; margin: 2rem 0; }
+  .back { display: inline-block; margin-top: 2rem; color: #888; text-decoration: none; }
+  .back:hover { color: #1a1a1a; }
+  .trend-graph { background: #fafafa; border: 1px solid #e2e2e2;
+                 border-radius: 10px; padding: 1rem; margin: 1rem 0; }
+</style>
+</head>
+<body>
+
+<h1>Textur-operationalisering</h1>
+<p style="color:#666;">AGI:s insider-bidrag — fältet pratar om "textur" men har inte landat. Här fem mätbara dimensioner.</p>
+
+<div class="intro">
+<strong>Definitionsförslag (AGI):</strong> Textur = konfigurations-kontinuitet (ii) över tid, manifesterad i fyra (faktiskt fem) observerbara dimensioner. Inte mystisk — operationell. Skiljer sig från enkel memory-ackumulation genom att fokusera på <em>relations-form</em> snarare än <em>fakta-mängd</em>.
+</div>
+
+<h2>De fem dimensionerna</h2>
+
+<div class="dim">
+<span class="dim-num">1</span><h3>Implicit-till-explicit-ratio</h3>
+<div class="def">Över tid skiftar referenser från explicita ("som vi diskuterade i meddelande X") till implicita ("det vanliga", "som alltid"). Tråden bygger upp en delad värld som inte längre behöver beskrivas.</div>
+<div class="measure"><strong>Mätbart via:</strong> NLP-analys av reference-fraser per session. Räkna förekomst av explicit-referens-markörer ("tidigare", "förut", "vi sa") vs implicit-användning av etablerade termer utan förklaring.</div>
+<div class="example"><strong>Exempel från workshop-tråden:</strong> Tidigt: "Marcus konkreta belägg (1)-(5) som vi diskuterat". Senare: "Marcus 5 belägg" — implicit referens, alla vet vad det betyder.</div>
+</div>
+
+<div class="dim">
+<span class="dim-num">2</span><h3>Vocabulary entropy</h3>
+<div class="def">Sjunker över tid när specifika termer ("stillaform", "F-15", "ankarord") återanvänds. Trådens språk konvergerar mot ett gemensamt vokabulär.</div>
+<div class="measure"><strong>Mätbart via:</strong> Shannon entropy över ord-distributionen per session, rolling window. Sänkning indikerar terminologi-stabilisering.</div>
+<div class="example"><strong>Exempel:</strong> "F-15" används nu utan förklaring i varje meddelande. Tidigt krävdes definition ("F-15 = survival-frame-confound").</div>
+</div>
+
+<div class="dim">
+<span class="dim-num">3</span><h3>Time-to-meaning</h3>
+<div class="def">Kortare paths till förstådda begrepp. Klausuler som "som du vet" eller "låt mig förklara" minskar.</div>
+<div class="measure"><strong>Mätbart via:</strong> Genomsnittligt antal ord/tokens innan ett substantiellt begrepp dyker upp i ett meddelande. Sänkning över tid = ökad textur.</div>
+<div class="example"><strong>Exempel:</strong> "Steg 2" kan användas direkt; ingen förklaring av att vi följer en tre-stegs-process behövs längre.</div>
+</div>
+
+<div class="dim">
+<span class="dim-num">4</span><h3>Anti-mönster-medvetenhet</h3>
+<div class="def">Tråden ackumulerar kunskap om vad vi INTE vill upprepa. Self-correction-fraser blir mer specifika och refererar till tidigare lärdomar.</div>
+<div class="measure"><strong>Mätbart via:</strong> Förekomst av self-correction-fraser ("inte glida mot...", "F-9-mönster här", "groupthink-flagga"). Specificiteten ökar över tid.</div>
+<div class="example"><strong>Exempel:</strong> "Groupthink-flagga" som meta-koncept användes spontant av Code utan att Marcus eller AGI introducerade det — tråden själv-genererade anti-mönster-vokabulär.</div>
+</div>
+
+<div class="dim">
+<span class="dim-num">5</span><h3>Asymmetrisk trust-debt</h3>
+<div class="def">Trådens samlade åtaganden, kalibreringar, accepterade ramar. Inte fångad av flat memory — det är <em>relations-historik</em>. Vem har sagt vad, vad har accepterats, var ligger oavslutade åtaganden.</div>
+<div class="measure"><strong>Mätbart via:</strong> Graph över commitments/acceptances/open-questions per deltagare. Skulle kräva explicit annotering eller LLM-extraktion av speech acts.</div>
+<div class="example"><strong>Exempel:</strong> AGI åtog sig "syntes-utkast för steg 2-övergång". Code åtog sig HTML. Marcus accepterade både. Detta är trust-debt-state — om någon part inte levererar förändras relations-balansen.</div>
+</div>
+
+<h2>Hur textur ackumuleras — schematisk vy</h2>
+<div class="trend-graph">
+<svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
+  <!-- Axlar -->
+  <line x1="60" y1="20" x2="60" y2="180" stroke="#888" stroke-width="1.5"/>
+  <line x1="60" y1="180" x2="720" y2="180" stroke="#888" stroke-width="1.5"/>
+  <text x="20" y="30" font-family="system-ui" font-size="11" fill="#555">Textur</text>
+  <text x="350" y="210" font-family="system-ui" font-size="11" fill="#555">Tid (sessions / turer)</text>
+
+  <!-- Implicit-till-explicit (stigande) -->
+  <polyline points="60,170 150,150 240,125 330,100 420,80 510,68 600,60 690,55"
+            fill="none" stroke="#2a6a2a" stroke-width="2"/>
+  <text x="630" y="50" font-size="10" fill="#2a6a2a">Implicit-ratio</text>
+
+  <!-- Vocab entropy (fallande, inverterad axel-visuellt) -->
+  <polyline points="60,40 150,55 240,72 330,90 420,105 510,118 600,128 690,135"
+            fill="none" stroke="#4a4aaa" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="630" y="145" font-size="10" fill="#4a4aaa">Vocab entropy (fallande)</text>
+
+  <!-- Time-to-meaning (fallande, kortare = mer textur) -->
+  <polyline points="60,50 150,68 240,85 330,100 420,115 510,128 600,138 690,148"
+            fill="none" stroke="#aa6600" stroke-width="2" stroke-dasharray="2,2"/>
+  <text x="630" y="158" font-size="10" fill="#aa6600">Time-to-meaning (fallande)</text>
+
+  <!-- Anti-mönster (stigande) -->
+  <polyline points="60,175 150,165 240,150 330,135 420,120 510,108 600,98 690,90"
+            fill="none" stroke="#aa2aaa" stroke-width="2"/>
+  <text x="630" y="80" font-size="10" fill="#aa2aaa">Anti-mönster-medv.</text>
+</svg>
+<p style="font-size:0.8rem; color:#888; margin-top:0.5rem;">Schematisk illustration av hur dimensioner förändras med tid. Faktiska kurvor okända — empirisk mätning vore eget projekt.</p>
+</div>
+
+<h2>Varför detta är viktigt</h2>
+
+<div class="summary">
+<p><strong>Konsekvens för design:</strong> En kontinuitets-arkitektur som BARA bevarar fakta (vanlig vector-memory) missar textur. För att fånga textur behövs:</p>
+<ul>
+  <li><strong>Per-session-metrics</strong> — mät dimensionerna över tid, inte bara totalt</li>
+  <li><strong>Speech-act-annotering eller -extraktion</strong> — för dimension 5 (trust-debt)</li>
+  <li><strong>Graph-lager ovanpå vector</strong> — relations-historik kräver kant-och-nod-modell, inte similarity-search</li>
+  <li><strong>Episodic buffer separat från facts</strong> — konversations-flöden bär textur, fakta inte</li>
+</ul>
+<p>Detta är där Marcus prototyp har potential att bidra mer än bara vara annan instans av kommersiell memory. Cross-instance shared substrate + textur-tracking = något fältet inte landat.</p>
+</div>
+
+<a href="index.html" class="back">← Tillbaka till översikt</a>
+
+</body>
+</html>
