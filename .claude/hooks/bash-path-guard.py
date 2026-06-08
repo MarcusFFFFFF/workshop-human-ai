@@ -38,6 +38,12 @@ def main():
         sys.stderr.write(f"DENIED by bash-path-guard: {reason}\n")
         sys.exit(2)
 
+    # F6: command substitution (backtick / $()) — injection-vektor som kringgår
+    # både deny-allowlist och path-checks (shellet exekverar substitution INNAN
+    # hookens path-matching ser något). Måste blockas tidigt.
+    if "`" in cmd or re.search(r"\$\(", cmd):
+        deny("command substitution (backtick / $()) blocked — injection vector")
+
     write_patterns = [
         r">\s*[^|&\s>]",      # > file (men inte >> som vi tillåter via separat regel om nödv)
         r">>\s*[^|&\s>]",     # >> file
