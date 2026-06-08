@@ -10,6 +10,10 @@
 # Bridge-logg innehåller raw memory I/O — kan ha känsligt content
 sessions/workshop_bridge.log
 
+# STATE.md — överlämning mellan Code-instanser, läses lokalt från disk.
+# Innehåller privata tredje parter och öppna sårbarhets-listor — får ej publiceras.
+STATE.md
+
 # macOS
 .DS_Store
 

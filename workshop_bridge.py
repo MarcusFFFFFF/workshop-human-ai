@@ -33,6 +33,36 @@ from pathlib import Path
 
 import requests
 
+
+def _load_secrets():
+    """Läs WORKSHOP_BOT_TOKEN och WORKSHOP_CHAT_ID från ~/.workshop_secrets
+    (chmod 600) om filen finns och variablerna inte redan satta i miljön.
+
+    Sparar token från att synas i process-listan (ps/pgrep) — tidigare
+    laddades via `export WORKSHOP_BOT_TOKEN="..."` i shell-kommandoraden
+    vilket exponerade värdet (B9 i extern Code:s buggrapport, 2026-06-08).
+    """
+    secrets_path = Path.home() / ".workshop_secrets"
+    if not secrets_path.exists():
+        return
+    try:
+        for line in secrets_path.read_text().splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            key = key.strip()
+            value = value.strip().strip('"').strip("'")
+            if key and value and key not in os.environ:
+                os.environ[key] = value
+    except Exception:
+        pass
+
+
+_load_secrets()
+
 # Marcus-memory imports
 MARCUS_MEMORY_PATH = "/Users/marcusfrenell/marcus_memory"
 if MARCUS_MEMORY_PATH not in sys.path:
